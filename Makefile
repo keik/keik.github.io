@@ -1,6 +1,6 @@
 all: clean html public/CNAME
 
-html: public ${wildcard src/*.html}
+html: node_modules public ${wildcard src/*.html}
 	@${foreach \
 		HTML, ${filter %.html, $?}, \
 		node_modules/.bin/html-minifier $(HTML)\
@@ -18,5 +18,8 @@ public:
 
 clean:
 	@rm -rf public
+
+node_modules: package.json
+	@npm install
 
 .PHONY: all html clean
