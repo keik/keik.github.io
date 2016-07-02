@@ -1,6 +1,4 @@
 all: clean html dist/CNAME
-# TID:=$(shell git write-tree --prefix dist)
-# CID:=$(shell git commit-tree -p master -m "Update" $(TID))
 
 deploy: all
 	@sh -c '\
