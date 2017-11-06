@@ -1,4 +1,4 @@
-all: clean html dist/CNAME
+all: clean html
 
 deploy: all
 	@sh -c '\
@@ -18,9 +18,6 @@ html: node_modules dist ${wildcard src/*.html}
 			--minify-js \
 			--output dist/${notdir $(HTML)} \
 	;}
-
-dist/CNAME: src/CNAME
-	@cp src/CNAME dist/CNAME
 
 dist:
 	@mkdir -p dist
