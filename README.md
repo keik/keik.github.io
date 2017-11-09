@@ -1,1 +1,7 @@
--> http://keik.info
+https://keik.github.io
+
+# deploy
+
+```
+% make deploy
+```
